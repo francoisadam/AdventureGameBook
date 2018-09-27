@@ -11,13 +11,32 @@
         android:label="AuthFragment"
         tools:layout="@layout/fragment_auth">
         <action
-            android:id="@+id/action_authFragment_to_homeActivity"
-            app:destination="@id/homeActivity" />
+            android:id="@+id/action_authFragment_to_loadFragment"
+            app:destination="@id/loadFragment" />
+        <action
+            android:id="@+id/action_authFragment_to_characterCreationFragment"
+            app:destination="@id/characterCreationFragment" />
     </fragment>
 
     <activity
         android:id="@+id/homeActivity"
         android:name="com.github.francoisadam.adventuregamebook.activity.HomeActivity"
         android:label="activity_home"
-        tools:layout="@layout/activity_home" />
+        tools:layout="@layout/activity_home"/>
+    <fragment
+        android:id="@+id/loadFragment"
+        android:name="com.github.francoisadam.adventuregamebook.fragment.LoadFragment"
+        android:label="LoadFragment" >
+        <action
+            android:id="@+id/action_loadFragment_to_homeActivity"
+            app:destination="@id/homeActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/characterCreationFragment"
+        android:name="com.github.francoisadam.adventuregamebook.fragment.CharacterCreationFragment"
+        android:label="CharacterCreationFragment" >
+        <action
+            android:id="@+id/action_characterCreationFragment_to_homeActivity"
+            app:destination="@id/homeActivity" />
+    </fragment>
 </navigation>

@@ -3,36 +3,55 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
-    </group>
-
-    <item android:title="Communicate">
+    <item android:title="Personnage">
         <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/menu_character"
+                    android:icon="@drawable/ic_character"
+                    android:title="Feuille de personnage" />
+                <item
+                    android:id="@+id/menu_perks"
+                    android:icon="@drawable/ic_fire"
+                    android:title="Compétences" />
+                <item
+                    android:id="@+id/menu_equipment"
+                    android:icon="@drawable/ic_key"
+                    android:title="Equipement" />
+            </group>
         </menu>
     </item>
+
+
+    <item android:title="Partie">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/menu_load"
+                    android:icon="@drawable/ic_book"
+                    android:title="Changer de scenario" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="Divers">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/menu_help"
+                    android:icon="@drawable/ic_help"
+                    android:title="aide" />
+                <item
+                    android:id="@+id/menu_settings"
+                    android:icon="@drawable/ic_settings"
+                    android:title="Paramètres" />
+                <item
+                    android:id="@+id/menu_about"
+                    android:icon="@drawable/ic_info"
+                    android:title="A propos" />
+            </group>
+        </menu>
+    </item>
+
 
 </menu>

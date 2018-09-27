@@ -9,5 +9,56 @@
         android:id="@+id/homeFragment"
         android:name="com.github.francoisadam.adventuregamebook.fragment.HomeFragment"
         android:label="HomeFragment"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_perksFragment"
+            app:destination="@id/perksFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_characterSheetFragment"
+            app:destination="@id/characterSheetFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_equipmentFragment"
+            app:destination="@id/equipmentFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_helpFragment"
+            app:destination="@id/helpFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_authActivity"
+            app:destination="@id/authActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.github.francoisadam.adventuregamebook.fragment.SettingsFragment"
+        android:label="SettingsFragment" />
+    <fragment
+        android:id="@+id/perksFragment"
+        android:name="com.github.francoisadam.adventuregamebook.fragment.PerksFragment"
+        android:label="PerksFragment" />
+    <fragment
+        android:id="@+id/equipmentFragment"
+        android:name="com.github.francoisadam.adventuregamebook.fragment.EquipmentFragment"
+        android:label="EquipmentFragment" />
+    <fragment
+        android:id="@+id/helpFragment"
+        android:name="com.github.francoisadam.adventuregamebook.fragment.HelpFragment"
+        android:label="HelpFragment" />
+    <fragment
+        android:id="@+id/characterSheetFragment"
+        android:name="com.github.francoisadam.adventuregamebook.fragment.CharacterSheetFragment"
+        android:label="CharacterSheetFragment" />
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.github.francoisadam.adventuregamebook.fragment.AboutFragment"
+        android:label="AboutFragment" />
+    <activity
+        android:id="@+id/authActivity"
+        android:name="com.github.francoisadam.adventuregamebook.activity.AuthActivity"
+        android:label="activity_auth"
+        tools:layout="@layout/activity_auth" />
 </navigation>

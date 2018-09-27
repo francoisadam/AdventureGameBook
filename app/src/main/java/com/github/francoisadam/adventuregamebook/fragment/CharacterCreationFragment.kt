@@ -7,21 +7,18 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import com.github.francoisadam.adventuregamebook.R
-import kotlinx.android.synthetic.main.fragment_auth.*
+import kotlinx.android.synthetic.main.fragment_character_creation.*
 
-class AuthFragment : Fragment() {
-
+class CharacterCreationFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_auth, container, false)
+        return inflater.inflate(R.layout.fragment_character_creation, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        load_game.setOnClickListener {
-            Navigation.findNavController(it).navigate(R.id.action_authFragment_to_loadFragment)
-        }
-        new_game.setOnClickListener {
-            Navigation.findNavController(it).navigate(R.id.action_authFragment_to_characterCreationFragment)
+        create.setOnClickListener {
+            Navigation.findNavController(it).navigate(R.id.action_characterCreationFragment_to_homeActivity)
+            activity?.finish()
         }
     }
 }
