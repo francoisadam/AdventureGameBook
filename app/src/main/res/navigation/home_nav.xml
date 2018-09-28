@@ -31,6 +31,9 @@
         <action
             android:id="@+id/action_homeFragment_to_authActivity"
             app:destination="@id/authActivity" />
+        <action
+            android:id="@+id/action_homeFragment_to_documentFragment"
+            app:destination="@id/documentFragment" />
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
@@ -61,4 +64,8 @@
         android:name="com.github.francoisadam.adventuregamebook.activity.AuthActivity"
         android:label="activity_auth"
         tools:layout="@layout/activity_auth" />
+    <fragment
+        android:id="@+id/documentFragment"
+        android:name="com.github.francoisadam.adventuregamebook.fragment.DocumentFragment"
+        android:label="DocumentFragment" />
 </navigation>

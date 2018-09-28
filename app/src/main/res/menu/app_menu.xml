@@ -18,18 +18,21 @@
                     android:id="@+id/menu_equipment"
                     android:icon="@drawable/ic_key"
                     android:title="Equipement" />
+                <item
+                    android:id="@+id/menu_documents"
+                    android:icon="@drawable/ic_book"
+                    android:title="Documents" />
             </group>
         </menu>
     </item>
-
 
     <item android:title="Partie">
         <menu>
             <group android:checkableBehavior="single">
                 <item
                     android:id="@+id/menu_load"
-                    android:icon="@drawable/ic_book"
-                    android:title="Changer de scenario" />
+                    android:icon="@drawable/ic_group"
+                    android:title="Changer de personnage" />
             </group>
         </menu>
     </item>

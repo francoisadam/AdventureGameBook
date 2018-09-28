@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import com.github.francoisadam.adventuregamebook.R
+import com.github.francoisadam.adventuregamebook.activity.HomeActivity
 import kotlinx.android.synthetic.main.fragment_load.*
 
 class LoadFragment : Fragment() {
@@ -19,6 +20,13 @@ class LoadFragment : Fragment() {
         start.setOnClickListener {
             Navigation.findNavController(it).navigate(R.id.action_loadFragment_to_homeActivity)
             activity?.finish()
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        activity?.takeIf { act -> act is HomeActivity }?.let { act ->
+            (act as HomeActivity).setupBackButton()
         }
     }
 }

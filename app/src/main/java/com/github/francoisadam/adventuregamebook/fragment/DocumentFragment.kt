@@ -8,9 +8,9 @@ import android.view.ViewGroup
 import com.github.francoisadam.adventuregamebook.R
 import com.github.francoisadam.adventuregamebook.activity.HomeActivity
 
-class HelpFragment : Fragment() {
+class DocumentFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_help, container, false)
+        return inflater.inflate(R.layout.fragment_document, container, false)
     }
 
     override fun onResume() {

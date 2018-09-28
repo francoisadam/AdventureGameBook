@@ -6,12 +6,15 @@ import android.support.design.widget.NavigationView
 import android.support.v7.app.AppCompatActivity
 import android.view.Gravity
 import android.view.MenuItem
-import android.view.View
+import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.github.francoisadam.adventuregamebook.R
 import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+
+    var navController: NavController? = null
+    var isBackModeEnabled: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,49 +24,68 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         toolbar?.let { setSupportActionBar(it) }
         toolbar.setNavigationOnClickListener {
-            home_drawer?.openDrawer(Gravity.START)
+            if (isBackModeEnabled) {
+                onBackPressed()
+            } else {
+                home_drawer?.openDrawer(Gravity.START)
+            }
         }
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_menu)
-        supportActionBar?.setHomeButtonEnabled(true)
     }
 
     override fun onNavigationItemSelected(@NonNull item: MenuItem): Boolean {
         home_drawer?.closeDrawers()
         when (item.itemId) {
             R.id.menu_character -> {
-                navigateWithAction(item.actionView.id, R.id.action_homeFragment_to_characterSheetFragment)
+                navigateWithAction(R.id.action_homeFragment_to_characterSheetFragment)
                 return true
             }
             R.id.menu_perks -> {
-                navigateWithAction(item.actionView.id, R.id.action_homeFragment_to_perksFragment)
+                navigateWithAction(R.id.action_homeFragment_to_perksFragment)
                 return true
             }
             R.id.menu_equipment -> {
-                navigateWithAction(item.actionView.id, R.id.action_homeFragment_to_equipmentFragment)
+                navigateWithAction(R.id.action_homeFragment_to_equipmentFragment)
+                return true
+            }
+            R.id.menu_documents -> {
+                navigateWithAction(R.id.action_homeFragment_to_documentFragment)
                 return true
             }
             R.id.menu_load -> {
-                navigateWithAction(item.actionView.id, R.id.action_homeFragment_to_authActivity)
+                navigateWithAction(R.id.action_homeFragment_to_authActivity)
                 return true
             }
             R.id.menu_help -> {
-                navigateWithAction(item.actionView.id, R.id.action_homeFragment_to_helpFragment)
+                navigateWithAction(R.id.action_homeFragment_to_helpFragment)
                 return true
             }
             R.id.menu_settings -> {
-                navigateWithAction(item.actionView.id, R.id.action_homeFragment_to_settingsFragment)
+                navigateWithAction(R.id.action_homeFragment_to_settingsFragment)
                 return true
             }
             R.id.menu_about -> {
-                navigateWithAction(item.actionView.id, R.id.action_homeFragment_to_aboutFragment)
+                navigateWithAction(R.id.action_homeFragment_to_aboutFragment)
                 return true
             }
         }
         return false
     }
 
-    private fun navigateWithAction(viewId: Int, actionId: Int) {
-        Navigation.findNavController(this, viewId).navigate(actionId)
+    private fun navigateWithAction(actionId: Int) {
+        navController?.navigate(actionId)
+    }
+
+    fun setupBackButton() {
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_back)
+        supportActionBar?.setHomeButtonEnabled(true)
+        isBackModeEnabled = true
+    }
+
+    fun setupHomeButton() {
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_menu)
+        supportActionBar?.setHomeButtonEnabled(true)
+        isBackModeEnabled = false
     }
 }
