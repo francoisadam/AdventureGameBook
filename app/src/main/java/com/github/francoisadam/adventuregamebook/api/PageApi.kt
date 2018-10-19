@@ -19,6 +19,7 @@ interface PageApi {
     @GET("page/{pageId}")
     fun getPage(@Path("pageId") pageId: Int): Single<Page>
 
+    //TODO need auth
     @DELETE("page/{pageId}")
     fun deletePage(@Path("pageId") pageId: Int): Single<Unit>
 

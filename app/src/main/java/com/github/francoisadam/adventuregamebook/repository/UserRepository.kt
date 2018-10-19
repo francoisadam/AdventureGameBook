@@ -1,22 +1,26 @@
 package com.github.francoisadam.adventuregamebook.repository
 
 import com.github.francoisadam.adventuregamebook.api.ApiClient
-import com.github.francoisadam.adventuregamebook.api.LdhApi
+import com.github.francoisadam.adventuregamebook.api.UserApi
 import com.github.francoisadam.adventuregamebook.model.User
 import io.reactivex.Single
 import retrofit2.Retrofit
 
-object ApiRepository {
+object UserRepository {
 
     private var retrofit: Retrofit? = null
-    private var api: LdhApi? = null
+    private var api: UserApi? = null
 
     init {
         retrofit = ApiClient().getClient()
-        api = retrofit?.create(LdhApi::class.java)
+        api = retrofit?.create(UserApi::class.java)
     }
 
-    fun getUser(): Single<User>? {
-        return api?.getUser()
+    fun createUser(user: User): Single<User>? {
+        return api?.createUser(user)
+    }
+
+    fun getUser(userId: Int): Single<User>? {
+        return api?.getUser(userId)
     }
 }

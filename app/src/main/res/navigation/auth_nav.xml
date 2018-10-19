@@ -26,7 +26,8 @@
     <fragment
         android:id="@+id/loadFragment"
         android:name="com.github.francoisadam.adventuregamebook.fragment.LoadFragment"
-        android:label="LoadFragment" >
+        android:label="LoadFragment"
+        tools:layout="@layout/fragment_load">
         <action
             android:id="@+id/action_loadFragment_to_homeActivity"
             app:destination="@id/homeActivity" />
@@ -34,7 +35,8 @@
     <fragment
         android:id="@+id/characterCreationFragment"
         android:name="com.github.francoisadam.adventuregamebook.fragment.CharacterCreationFragment"
-        android:label="CharacterCreationFragment" >
+        android:label="CharacterCreationFragment"
+        tools:layout="@layout/fragment_character_creation">
         <action
             android:id="@+id/action_characterCreationFragment_to_homeActivity"
             app:destination="@id/homeActivity" />
