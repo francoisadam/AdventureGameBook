@@ -38,27 +38,33 @@
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.github.francoisadam.adventuregamebook.fragment.SettingsFragment"
-        android:label="SettingsFragment" />
+        android:label="SettingsFragment"
+        tools:layout="@layout/fragment_settings"/>
     <fragment
         android:id="@+id/perksFragment"
         android:name="com.github.francoisadam.adventuregamebook.fragment.PerksFragment"
-        android:label="PerksFragment" />
+        android:label="PerksFragment"
+        tools:layout="@layout/fragment_perks" />
     <fragment
         android:id="@+id/equipmentFragment"
         android:name="com.github.francoisadam.adventuregamebook.fragment.EquipmentFragment"
-        android:label="EquipmentFragment" />
+        android:label="EquipmentFragment"
+        tools:layout="@layout/fragment_equipment" />
     <fragment
         android:id="@+id/helpFragment"
         android:name="com.github.francoisadam.adventuregamebook.fragment.HelpFragment"
-        android:label="HelpFragment" />
+        android:label="HelpFragment"
+        tools:layout="@layout/fragment_help"/>
     <fragment
         android:id="@+id/characterSheetFragment"
         android:name="com.github.francoisadam.adventuregamebook.fragment.CharacterSheetFragment"
-        android:label="CharacterSheetFragment" />
+        android:label="CharacterSheetFragment"
+        tools:layout="@layout/fragment_character_sheet" />
     <fragment
         android:id="@+id/aboutFragment"
         android:name="com.github.francoisadam.adventuregamebook.fragment.AboutFragment"
-        android:label="AboutFragment" />
+        android:label="AboutFragment"
+        tools:layout="@layout/fragment_about"/>
     <activity
         android:id="@+id/authActivity"
         android:name="com.github.francoisadam.adventuregamebook.activity.AuthActivity"
@@ -67,5 +73,6 @@
     <fragment
         android:id="@+id/documentFragment"
         android:name="com.github.francoisadam.adventuregamebook.fragment.DocumentFragment"
-        android:label="DocumentFragment" />
+        android:label="DocumentFragment"
+        tools:layout="@layout/fragment_document" />
 </navigation>
