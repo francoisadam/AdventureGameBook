@@ -20,7 +20,7 @@ object UserRepository {
         return api?.createUser(user)
     }
 
-    fun getUser(userId: Int): Single<User>? {
-        return api?.getUser(userId)
+    fun getUser(token: String): Single<User>? {
+        return api?.getCurrentUser(token)
     }
 }

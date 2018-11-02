@@ -17,12 +17,12 @@ interface PersoApi {
     @PUT("perso")
     fun addPerso(): Single<Character>
 
-    @GET("perso/{id}")
-    fun getPerso(@Path("id") persoId: Int): Single<Character>
+    @GET("perso/{avatarUri}")
+    fun getPerso(@Path("avatarUri") persoId: Int): Single<Character>
 
-    @DELETE("perso/{id}")
-    fun deletePerso(@Path("id") persoId: Int): Single<Unit>
+    @DELETE("perso/{avatarUri}")
+    fun deletePerso(@Path("avatarUri") persoId: Int): Single<Unit>
 
-    @POST("perso/{id}/eat")
-    fun makePersoEat(@Path("id") persoId: Int, @Body food: Food): Single<Adventure>
+    @POST("perso/{avatarUri}/eat")
+    fun makePersoEat(@Path("avatarUri") persoId: Int, @Body food: Food): Single<Adventure>
 }

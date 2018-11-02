@@ -4,20 +4,23 @@ import android.os.Parcel
 import android.os.Parcelable
 
 class User() : Parcelable {
+    var id: String? = null
     var token: String? = null
     var givenName: String? = null
-    var id: String? = null
+    var avatarUri: String? = null
 
     constructor(parcel: Parcel) : this() {
+        id = parcel.readString()
         token = parcel.readString()
         givenName = parcel.readString()
-        id = parcel.readString()
+        avatarUri = parcel.readString()
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeString(id)
         parcel.writeString(token)
         parcel.writeString(givenName)
-        parcel.writeString(id)
+        parcel.writeString(avatarUri)
     }
 
     override fun describeContents(): Int {

@@ -15,8 +15,8 @@ interface StoreApi {
     fun createStore(@Body store: Store): Single<Store>
 
     //TODO need auth
-    @GET("store/{id}")
-    fun getStore(@Path("id") storeId: Int): Single<Store>
+    @GET("store/{avatarUri}")
+    fun getStore(@Path("avatarUri") storeId: Int): Single<Store>
 
     //TODO need auth
     @GET("store/all")

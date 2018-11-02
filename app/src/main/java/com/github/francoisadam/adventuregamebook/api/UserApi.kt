@@ -2,17 +2,14 @@ package com.github.francoisadam.adventuregamebook.api
 
 import com.github.francoisadam.adventuregamebook.model.User
 import io.reactivex.Single
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.PUT
-import retrofit2.http.Path
+import retrofit2.http.*
 
 
 interface UserApi {
 
     //TODO need auth
     @GET("user")
-    fun getCurrentUser(): Single<User>
+    fun getCurrentUser(@Header("Authorization") token: String): Single<User>
 
     @PUT("user")
     fun createUser(@Body user: User): Single<User>

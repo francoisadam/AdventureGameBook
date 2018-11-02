@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import com.github.francoisadam.adventuregamebook.R
+import com.github.francoisadam.adventuregamebook.manager.SharedPreferencesManager
 import kotlinx.android.synthetic.main.fragment_auth.*
 
 class AuthFragment : Fragment() {
@@ -18,10 +19,26 @@ class AuthFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         load_game.setOnClickListener {
-            Navigation.findNavController(it).navigate(R.id.action_authFragment_to_loadFragment)
+            //TODO unmock step 2
+            //Navigation.findNavController(it).navigate(R.avatarUri.action_authFragment_to_loadFragment)
         }
         new_game.setOnClickListener {
-            Navigation.findNavController(it).navigate(R.id.action_authFragment_to_characterCreationFragment)
+            //TODO unmock step 2
+            //Navigation.findNavController(it).navigate(R.avatarUri.action_authFragment_to_characterCreationFragment)
+        }
+
+        authenticate()
+    }
+
+    private fun authenticate() {
+        context?.let {
+            //TODO changer ça en checkant au niveau de l'api que le user avec le token DugrakToken existe
+            val userId: String? = SharedPreferencesManager.getUserToken(it)
+            if (userId == null || userId.isEmpty()) {
+                view?.let { v -> Navigation.findNavController(v).navigate(R.id.action_authFragment_to_characterCreationFragment) }
+            } else {
+                view?.let { v -> Navigation.findNavController(v).navigate(R.id.action_authFragment_to_loadFragment) }
+            }
         }
     }
 }
