@@ -36,7 +36,7 @@ class CharacterCreationFragment : Fragment() {
     private fun create() {
         val user = User()
         user.givenName = "Dugrak"
-        user.avatarUri = ""
+        user.avatarUri = "https://www.drivethrurpg.com/images/8135/239925.jpg"
         user.token = "DugrakToken"
         context?.let { ctx ->
             UserRepository.createUser(user)

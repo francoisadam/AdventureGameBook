@@ -48,7 +48,7 @@ class LoadFragment : Fragment() {
                         ?.subscribe({ user ->
                             UserManager.saveUser(ctx, user)
                             view?.let { v ->
-                                Navigation.findNavController(v).navigate(R.id.action_characterCreationFragment_to_homeActivity)
+                                Navigation.findNavController(v).navigate(R.id.action_loadFragment_to_homeActivity)
                                 activity?.finish()
                             }
                         }, { throwable ->

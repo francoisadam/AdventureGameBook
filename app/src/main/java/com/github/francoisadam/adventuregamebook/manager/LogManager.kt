@@ -9,4 +9,8 @@ object LogManager {
         throwable.printStackTrace()
         Log.e(TAG, throwable.message)
     }
+
+    fun log(message: String) {
+        Log.i(TAG, message)
+    }
 }
